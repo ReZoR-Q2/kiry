@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
-from greenpage import views
+from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', views.about),
+    path('', views.home),
+    path('about/', include('greenpage.urls')),
     path('next/', include('redpage.urls')),
 ]
